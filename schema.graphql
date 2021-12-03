@@ -24,6 +24,7 @@ type LogKill @entity {
 
 type LogTake @entity {
   id: ID!
+  order_id: ID!
   pair: Bytes!
   maker: Bytes!
   taker: Bytes!
