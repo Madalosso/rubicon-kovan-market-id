@@ -126,6 +126,7 @@ export function handleLogKill(event: LogKill): void {
 
   logKill.id = lkID;
   logKill.order = lkID;
+  logKill.maker = ep.maker;
   logKill.timestamp = ep.timestamp;
   logKill.transactionHash = ep._event.transaction.hash;
 

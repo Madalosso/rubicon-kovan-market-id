@@ -17,6 +17,7 @@ type LogKill @entity {
   order: LogMake!
   transactionHash: Bytes!
   timestamp: BigInt!
+  maker: Bytes!
 }
 
 type LogTake @entity {
