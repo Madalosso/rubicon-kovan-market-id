@@ -8,23 +8,20 @@ type LogMake @entity {
   buy_amt: BigInt!
   timestamp: BigInt!
   transactionHash: Bytes!
+  logTakes: [LogTake!] @derivedFrom(field: "order")
+  logKill: LogKill @derivedFrom(field: "order")
 }
 
 type LogKill @entity {
   id: ID!
-  pair: Bytes!
-  maker: Bytes!
-  pay_gem: Bytes!
-  buy_gem: Bytes!
-  pay_amt: BigInt!
-  buy_amt: BigInt!
-  timestamp: BigInt!
+  order: LogMake!
   transactionHash: Bytes!
+  timestamp: BigInt!
 }
 
 type LogTake @entity {
   id: ID!
-  order_id: ID!
+  order: LogMake!
   pair: Bytes!
   maker: Bytes!
   taker: Bytes!

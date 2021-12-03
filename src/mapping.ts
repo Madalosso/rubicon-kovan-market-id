@@ -125,12 +125,7 @@ export function handleLogKill(event: LogKill): void {
     logKill = new LogKillEntity(lkID);
 
   logKill.id = lkID;
-  logKill.pair = ep.pair;
-  logKill.maker = ep.maker;
-  logKill.pay_gem = ep.pay_gem;
-  logKill.buy_gem = ep.buy_gem;
-  logKill.pay_amt = ep.pay_amt;
-  logKill.buy_amt = ep.buy_amt;
+  logKill.order = lkID;
   logKill.timestamp = ep.timestamp;
   logKill.transactionHash = ep._event.transaction.hash;
 
@@ -165,7 +160,7 @@ export function handleLogTake(event: LogTake): void {
     logTake = new LogTakeEntity(uuid);
 
   logTake.id = uuid;
-  logTake.order_id = ltID;
+  logTake.order = ltID;
   logTake.pair = ep.pair;
   logTake.maker = ep.maker;
   logTake.taker = ep.taker;
