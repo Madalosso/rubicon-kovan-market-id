@@ -4,9 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: Market
-    network: optimism-kovan
+    # network: optimism-kovan
+    network: optimism
     source:
-      address: "0x5ddDa7DF721272106af1904abcc64E76AB2019d2"
+      # address: "0x5ddDa7DF721272106af1904abcc64E76AB2019d2" # kovan
+      address: "0xe0e112e8f33d3f437D1F895cbb1A456836125952" # mainnet
       abi: Market
     mapping:
       kind: ethereum/events

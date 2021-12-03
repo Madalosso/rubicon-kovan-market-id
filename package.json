@@ -4,6 +4,12 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
+
+    "deploy-kovan": "graph deploy --product hosted-service madalosso/rubicon-kovan-market-id",
+
+    "//": "to deploy on mainnet, remember to change address and network on subgraph.yaml",
+    "deploy-mainnet": "graph deploy --product hosted-service madalosso/rubicon-market-id",
+
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ madalosso/rubicon-kovan-market-id",
     "create-local": "graph create --node http://localhost:8020/ madalosso/rubicon-kovan-market-id",
     "remove-local": "graph remove --node http://localhost:8020/ madalosso/rubicon-kovan-market-id",
