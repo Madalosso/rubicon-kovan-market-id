@@ -4,11 +4,10 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-
-    "deploy-kovan": "graph deploy --product hosted-service madalosso/rubicon-kovan-market-id",
-
-    "//": "to deploy on mainnet, remember to change address and network on subgraph.yaml",
-    "deploy-mainnet": "graph deploy --product hosted-service madalosso/rubicon-market-id",
+    "prepare:op-main": "mustache config/mainnet-optimism.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:op-kovan": "mustache config/kovan-optimism.json subgraph.template.yaml > subgraph.yaml",
+    "deploy:op-main": "yarn prepare:op-main && graph deploy --product hosted-service madalosso/rubicon-market-id",
+    "deploy:op-kovan": "yarn prepare:op-kovan && graph deploy --product hosted-service madalosso/rubicon-kovan-market-id",
 
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ madalosso/rubicon-kovan-market-id",
     "create-local": "graph create --node http://localhost:8020/ madalosso/rubicon-kovan-market-id",
@@ -17,6 +16,7 @@
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.25.0",
-    "@graphprotocol/graph-ts": "0.24.1"
+    "@graphprotocol/graph-ts": "0.24.1",
+    "mustache": "^4.2.0"
   }
 }

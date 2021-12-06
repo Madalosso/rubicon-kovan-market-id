@@ -23,20 +23,12 @@ You only need to do this once.
 After that, you should be able to deploy the subgraph:
 
 ```
-yarn deploy-mainnet
+yarn deploy:op-main
 # or
-yarn deploy-kovan
+yarn deploy:op-kovan
 ```
 
-Note that for each deploy, you need to comment/uncomment specific network data on `subgraph.yaml`:
-
-```yaml
-# network: optimism-kovan
-network: optimism
-source:
-  # address: "0x5ddDa7DF721272106af1904abcc64E76AB2019d2" # kovan
-  address: "0x7a512d3609211e719737E82c7bb7271eC05Da70d" # mainnet
-```
+Note that we are using the template system mustache to fill the placholders on `subgraph.template.yaml` and generate a `subgraph.yaml` file so we can parametrize configurations and deploy to multiple networks using the same proejct. (https://thegraph.com/docs/hostedservice/deploy-subgraph-hosted#deploying-the-subgraph-to-multiple-ethereum-networks) (thanks for the tip @platocrat)
 
 ## Editing `schema.graphql`
 

@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum
     name: Market
-    network: optimism
+    network: {{ network }}
     source:
-      address: "0x7a512d3609211e719737E82c7bb7271eC05Da70d"
+      address: "{{address}}"
       abi: Market
     mapping:
       kind: ethereum/events
