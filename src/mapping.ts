@@ -156,7 +156,7 @@ export function handleLogMake(event: LogMake): void {
 export function handleLogTake(event: LogTake): void {
   let ep = event.params,
     ltID = ep.id.toHexString(),
-    uuid = event.transaction.hash.toHexString() + ltID,
+    uuid = event.transaction.hash.toHex() + "-" + event.logIndex.toString(),
     // Create new LogTake entity
     logTake = new LogTakeEntity(uuid);
 
